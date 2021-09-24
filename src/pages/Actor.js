@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
+import styles from '../css/Actor.module.css';
 
 const Actor = () => {
     const [showCredits, setShowCredits] = useState(false)
@@ -23,7 +24,7 @@ const Actor = () => {
 
     return (
         <>
-            <Container >
+            <Container className={styles.container}>
 
                 {isLoading && <h2>Loading actor...</h2>}
 

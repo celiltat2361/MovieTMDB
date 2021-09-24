@@ -1,6 +1,6 @@
 import React from 'react'
 import FilmCard from './FilmCard'
-import Container from 'react-bootstrap/Container'
+import CardGroup from 'react-bootstrap/CardGroup'
 import Row from 'react-bootstrap/Row'
 
 //rendering the list of movies for genres and the categories
@@ -8,7 +8,7 @@ const MoviesList = ({ movies }) => {
 
     return (
         <>
-        <Container>
+        <CardGroup>
             <Row>
 
             {movies && movies.map(movie => (
@@ -16,7 +16,7 @@ const MoviesList = ({ movies }) => {
             ))}
             </Row>
 
-        </Container>
+        </CardGroup>
         </>
     )
 }

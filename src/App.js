@@ -9,6 +9,7 @@ import Navigation from './components/Navigation'
 import PageNotFound from './pages/PageNotFound'
 import MovieDetailsPage from './pages/MovieDetailsPage'
 
+
 function App() {
   
   return (

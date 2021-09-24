@@ -6,30 +6,26 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const Navigation = () => {
   return (
-    
-  <Navbar>
+		<Navbar collapseOnSelect expand="lg" bg="light" variant="light">
 			<Container>
-				<Link to="/" className="navbar-brand">
-					MovieApp
-				</Link>
+				<Navbar.Brand href="/">My Movies App</Navbar.Brand>
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+					<Navbar.Collapse id="responsive-navbar-nav">
+						<Nav className="me-auto" >
 
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse>
-						<Nav>
-
-							<NavLink to="/category/popular?p=1">
+							<NavLink className="nav-link" to="/category/popular?p=1">
 								Popular Movies
 							</NavLink>
 
-							<NavLink to="/category/now_playing?p=1">
+							<NavLink className="nav-link" to="/category/now_playing?p=1">
 								Now Playing Movies
 							</NavLink>
 
-							<NavLink to="/category/top_rated?p=1">
+							<NavLink className="nav-link" to="/category/top_rated?p=1">
 								Top Movies
 							</NavLink>
 
-							<NavLink to="/genres">
+							<NavLink className="nav-link" to="/genres">
 								Genres
 							</NavLink>
 
@@ -37,6 +33,8 @@ const Navigation = () => {
 					</Navbar.Collapse>
 			</Container>
 		</Navbar>
+
+		
     )
 }
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
 import { useParams, Link } from 'react-router-dom'
 import { getMovieById } from '../services/MoviesAPI'
-
+import styles from '../css/MovieDetails.module.css'
 
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
@@ -26,19 +26,19 @@ const MovieDetailsPage = () => {
 
     return (
         <>
-            <Container className="d-flex">
+            <Container className={styles.container}>
                 {isLoading && <h2>Loading movie...</h2>}
 
                 {isError && <h2>Upps! we couldn't find the movie.</h2>}
 
                 {data && 
-                    <Card style={{ width: 'auto' }} border="dark">
-                       <Card.Header> 
+                    <div className={styles.container2} style={{ width: 'auto' }} border="dark">
+                       <Card.Header className='pt-0'> 
                         </Card.Header>
                         {!showActors && 
                         <>
-                        <div className="d-flex">
-                        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400${data.poster_path}`} alt={data.title} />
+                        
+                        <Card.Img variant="top" className={styles.image} src={`https://image.tmdb.org/t/p/w400${data.poster_path}`} alt={data.title} />
                         <Card.Body>
                             <Card.Title>{data.title}</Card.Title>
                             <Card.Subtitle className="mb-3 mt-3">
@@ -49,11 +49,10 @@ const MovieDetailsPage = () => {
                             </Card.Subtitle>
                             <Card.Text>{data.overview}</Card.Text>
                             <ButtonGroup >
-                              {/* <Button variant="secondary" disabled={!showActors} onClick={() => setShowActors(false)}>About</Button> */}
                               <Button variant="secondary" disabled={showActors} onClick={() => setShowActors(true)}>Actors</Button>
                             </ButtonGroup>  
                         </Card.Body>
-                        </div>
+                        
                         </> }
 
                         {showActors && 
@@ -75,7 +74,7 @@ const MovieDetailsPage = () => {
                             </ListGroup>
                         </Card.Body>
                         }
-                    </Card>
+                    </div>
                 }       
             </Container>
         </>

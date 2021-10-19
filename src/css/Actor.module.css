@@ -1,7 +1,42 @@
 .container {
-  color: var(--white);
-  background: var(--darkGrey);
-  border-radius: 20px;
-  padding: 5px;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    background: var(--darkGrey);
+    border-radius: 20px;
+    padding: 5px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.descContainer {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.imgContainer {
+    width: 200px !important;
+    height: auto !important;
+}
+
+.imgOther {
+    width: 600px !important;
+    height: auto !important;
+}
+
+@media (max-width: 768px) {
+    .imgOther {
+        width: auto !important;
+        height: auto !important;
+    }
+    .descContainer {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -36,42 +36,47 @@ const MovieDetailsPage = () => {
                        <Card.Header className='pt-0'> 
                         </Card.Header>
                         {!showActors && 
-                        <>
                         
-                        <Card.Img variant="top" className={styles.image} src={`https://image.tmdb.org/t/p/w400${data.poster_path}`} alt={data.title} />
-                        <Card.Body>
-                            <Card.Title>{data.title}</Card.Title>
-                            <Card.Subtitle className="mb-3 mt-3">
-                                <span>Genres:</span>
-                                {data.genres.map(genre => (
-                                    <span key={genre.name}> {genre.name.toLowerCase()}, </span>
-                                ))}
-                            </Card.Subtitle>
-                            <Card.Text>{data.overview}</Card.Text>
-                            <ButtonGroup >
-                              <Button variant="secondary" disabled={showActors} onClick={() => setShowActors(true)}>Actors</Button>
-                            </ButtonGroup>  
-                        </Card.Body>
+                        <div className={styles.mainDetails}>
+                            <div>
+                            <Card.Img variant="top" className={styles.image} src={`https://image.tmdb.org/t/p/w400${data.poster_path}`} alt={data.title} />
+                            </div>    
+                            <div>
+                            <Card.Body>
+                                <Card.Title>{data.title}</Card.Title>
+                                <Card.Subtitle className="mb-3 mt-3">
+                                    <span>Genres:</span>
+                                    {data.genres.map(genre => (
+                                        <span key={genre.name}> {genre.name.toLowerCase()}, </span>
+                                    ))}
+                                </Card.Subtitle>
+                                <Card.Text>{data.overview}</Card.Text>
+                                <ButtonGroup >
+                                <Button variant="secondary" disabled={showActors} onClick={() => setShowActors(true)}>Actors</Button>
+                                </ButtonGroup>  
+                            </Card.Body>
+                            </div>
+                        </div>
                         
-                        </> }
+                         }
 
                         {showActors && 
-                        <Card.Body>
+                        <Card.Body >
                             <Card.Title>{data.title} actors:</Card.Title>
                                     
-                            <ListGroup >
+                            <ul className={styles.actors}>
                                 
                                 {actors.map(actor => (
-                                    <ListGroupItem key={actor.id} >
-                                        <img src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} /> 
+                                    <li className={styles.actor} key={actor.id} >
+                                        <img style={{maxWidth:'200px'}} src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} /> 
                                         <section>
                                             <p>{actor.name}</p>
                                             <Link to={`/actor/${actor.id}`}>More info</Link>
                                         </section>
-                                    </ListGroupItem>
+                                    </li>
                                 ))}
 
-                            </ListGroup>
+                            </ul>
                         </Card.Body>
                         }
                     </div>

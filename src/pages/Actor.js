@@ -36,13 +36,13 @@ const Actor = () => {
                         <Card.Header>
                             <div className={styles.buttonContainer}>
                                 <Button disabled={!showCredits} onClick={() => setShowCredits(false)}>About</Button>
-                                <Button disabled={showCredits} onClick={() => setShowCredits(true)}>Other Films</Button>
+                                <Button className={styles.button2} disabled={showCredits} onClick={() => setShowCredits(true)}>Other Films</Button>
                             </div>
                         </Card.Header>
                         
 
                         {!showCredits && 
-                        <div className={styles.descContainer}>
+                        <div className={styles.imgOther}>
                             <div>
                                 <Card.Img className={styles.imgContainer} variant="top" src={`https://image.tmdb.org/t/p/w500${data.profile_path}`} alt={data.name} />
                             </div>   
@@ -61,14 +61,14 @@ const Actor = () => {
                             <Card.Body>
                                 <Card.Title>Other Films:</Card.Title>
                                         
-                                <ListGroup>  
+                                <ListGroup className={styles.imgOther}>  
                                     {credits?.map(movie => (
                                         <ListGroupItem key={movie.id} >
                                             <img className={styles.imgOther} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} /> 
-                                            <section>
+                                            <section classname={styles.imgOther}>
                                                 <p>{movie.title} ({movie.release_date})</p>
                                                 {movie.character && <p>As: {movie.character}</p>}
-                                                <Link to={`/movie/${movie.id}`} className="btn btn-dark">More info</Link>
+                                                <Link to={`/movie/${movie.id}`} className="btn btn-light">More info</Link>
                                             </section>
                                         </ListGroupItem>
                                     ))}

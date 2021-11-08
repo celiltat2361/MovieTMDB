@@ -18,6 +18,7 @@
 .descContainer {
     display: flex !important;
     flex-direction: row !important;
+    justify-content: center;
 }
 
 .imgContainer {
@@ -31,12 +32,38 @@
 }
 
 @media (max-width: 768px) {
-    .imgOther {
-        width: auto !important;
-        height: auto !important;
-    }
     .descContainer {
         display: flex;
         flex-direction: column;
+    }
+    .buttonContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .descContainer {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .imgOther {
+        width: 500px;
+        height: 250px;
+        display: table;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        margin: 0 auto;
+        width: 300px !important;
+        height: auto !important;
+    }
+    .buttonContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px !important;
+    }
+    .button2 {
+        margin-left: 20px !important;
     }
 }

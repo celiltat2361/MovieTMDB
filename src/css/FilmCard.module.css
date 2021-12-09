@@ -1,12 +1,12 @@
-
 .image img {
   transition: all 0.3s;
   box-sizing: border-box;
-  width: 100%;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
 }
 
-
-.cards{
+.cards {
   display: grid;
   place-items: center;
   margin: 1.2rem 0;

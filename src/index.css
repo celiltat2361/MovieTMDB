@@ -6,10 +6,6 @@ body {
   position: relative;
 }
 
-.movie-card-wrapper {
-  height: 460px;
-  
-}
 .person-card-wrapper {
   height: 380px;
 }
@@ -19,23 +15,23 @@ body {
 }
 
 .image {
-  height:100%;
+  width: 100%;
+  min-width: 100% !important;
   text-align: center;
-  overflow: hidden;
   cursor: pointer;
 }
 
-.search-icon{
-  color:white
+.search-icon {
+  color: white;
 }
 
- .search-icon :hover{
+.search-icon :hover {
   color: gray;
 }
 
-.time-stamp{
-  color:gray
+.time-stamp {
+  color: gray;
 }
-.card-body{
-  height:100%
+.card-body {
+  height: 100%;
 }
